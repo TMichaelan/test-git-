@@ -1,5 +1,4 @@
 def insertionSort(arr):
-    # Traverse through 1 to len(arr)
     for i in range(1, len(arr)):
 
         key = arr[i]
@@ -22,16 +21,3 @@ try:
             print(arr[i],end=' ')
 except NameError:
     print('W array istn string')
-
-# ch = True
-# for i in arr:
-#     if i is str(i):
-#         print('Blęd')
-#         ch = False
-#         break
-#     else:
-#         insertionSort(arr)
-#
-# if ch == True:
-#     for i in range(len(arr)):
-#         print(arr[i],end=' ')
