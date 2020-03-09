@@ -12,6 +12,7 @@ def insertionSort(arr):
 
 try:
     arr = list(map(int,input().split()))
+
 # arr = [13, 11, 13, 5, 6]
 except ValueError:
     print('Bląd')
