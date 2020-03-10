@@ -58,19 +58,10 @@ elif choosing == 2:
         print('W array istn string')
 
 elif choosing == 3:
-
     try:
         arr = list(map(int,input().split()))
     except ValueError:
         print('Bląd')
-
-    try:
-        insertionSort(arr)
-        for i in range(len(arr)):
-            print(arr[i], end=' ')
-    except NameError:
-        print('W array istn string')
-    f.close()
 
     try:
         f = open('main.txt', 'r')
@@ -83,18 +74,15 @@ elif choosing == 3:
         for i in minusskoby:
             x = int(i)
             intarray.append(x)
-
+        for i in intarray:
+            arr.append(i)
     except ValueError:
         print('Blęd Value Error')
 
     try:
-        insertionSort(intarray)
-        for i in range(len(intarray)):
-            print(intarray[i], end=' ')
+        insertionSort(arr)
+        for i in range(len(arr)):
+            print(arr[i], end=' ')
     except NameError:
         print('W array istn string')
     f.close()
-
-
-
-
