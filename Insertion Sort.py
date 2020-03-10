@@ -33,29 +33,28 @@ if choosing == 1:
         print('W array istn string')
 
 elif choosing == 2:
+    for i in range(1):
+        try:
+            f = open('main.txt', 'r')
+            line = f.readline()
+            array = []
+            array.append(line.split())
+            for minusskoby in array:
+                pass
+            intarray = []
+            for i in minusskoby:
+                x = int(i)
+                intarray.append(x)
+        except ValueError:
+            print('Blęd Value Error')
+            break
 
-    try:
-        f = open('main.txt', 'r')
-        line = f.readline()
-        array = []
-        array.append(line.split())
-        for minusskoby in array:
-            pass
-        intarray = []
-        for i in minusskoby:
-            x = int(i)
-            intarray.append(x)
-
-    except ValueError:
-        print('Blęd Value Error')
-
-
-    try:
-        insertionSort(intarray)
-        for i in range(len(intarray)):
-                print(intarray[i],end=' ')
-    except NameError:
-        print('W array istn string')
+        try:
+            insertionSort(intarray)
+            for i in range(len(intarray)):
+                    print(intarray[i],end=' ')
+        except NameError:
+            print('W array istn string')
 
 elif choosing == 3:
     try:
