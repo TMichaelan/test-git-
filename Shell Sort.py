@@ -1,3 +1,7 @@
+import time
+start_time = time.time()
+
+
 def ShellSort(arr):
     n = len(arr)
     gap = n // 2
@@ -6,20 +10,31 @@ def ShellSort(arr):
         for i in range(gap, n):
             temp = arr[i]
             j = i
-            while j >= gap and arr[j - gap] > temp:
+            while j >= gap and arr[j - gap] < temp:
                 arr[j] = arr[j - gap]
                 j -= gap
             arr[j] = temp
         gap //= 2
 
 
-choosing = int(input('Choose number from 1 to 3: ' ))
+try:
+    print("1 - Sort from input")
+    print("2 - Sort from file")
+    print("3 - Sort from list + file")
+    choosing = int(input('Choose number from 1 to 3: ' ))
+except ValueError:
+    choosing = 0
+
 
 '''
 1 - Sort from input
 2 - Sort from file
 3 - Sort from list + file
 '''
+if choosing > 3:
+    print('You must enter from 1 to 3!')
+if choosing == 0:
+    print('You must enter from 1 to 3!')
 
 if choosing == 1:
     try:
@@ -87,3 +102,5 @@ elif choosing == 3:
     except NameError:
         print('W array istn string')
     f.close()
+print()
+print("Time: %s seconds " % (time.time() - start_time))

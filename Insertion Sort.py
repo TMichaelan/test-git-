@@ -1,24 +1,37 @@
+import time
+start_time = time.time()
+
 def insertionSort(arr):
     for i in range(1, len(arr)):
 
         key = arr[i]
 
         j = i - 1
-        while j >= 0 and key < arr[j]:
+        while j >= 0 and key > arr[j]:
             arr[j + 1] = arr[j]
             j -= 1
         arr[j + 1] = key
 
 
 
-choosing = int(input('Choose number from 1 to 3: ' ))
+try:
+    print("1 - Sort from input")
+    print("2 - Sort from file")
+    print("3 - Sort from list + file")
+    choosing = int(input('Choose number from 1 to 3: ' ))
+except ValueError:
+    choosing = 0
+
 
 '''
 1 - Sort from input
 2 - Sort from file
 3 - Sort from list + file
 '''
-
+if choosing == 0:
+    print('You must enter from 1 to 3!')
+if choosing > 3:
+    print('You must enter from 1 to 3!')
 if choosing == 1:
     try:
         arr = list(map(int,input().split()))
@@ -53,6 +66,7 @@ elif choosing == 2:
             insertionSort(intarray)
             for i in range(len(intarray)):
                     print(intarray[i],end=' ')
+
         except NameError:
             print('W array istn string')
 
@@ -82,6 +96,9 @@ elif choosing == 3:
         insertionSort(arr)
         for i in range(len(arr)):
             print(arr[i], end=' ')
+
     except NameError:
         print('W array istn string')
     f.close()
+print()
+print("Time: %s seconds " % (time.time() - start_time))
